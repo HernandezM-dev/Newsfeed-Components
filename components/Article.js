@@ -164,20 +164,3 @@ data.forEach(obj => {
   const generatedArticle = articleMaker(obj);
   articles.appendChild(generatedArticle);
 })
-// const articles = document.querySelector('.articles')
-// const generatedArticle = articleMaker(data[0]);
-// articles.appendChild(generatedArticle);
-// console.log(articleMaker(data[0]));
-
-
-
-// {
-//   title: 'Why Naruto Is The Greatest Anime Of All Time And Every One Else Is Wrong',
-//   date: 'RIGHT NOW',
-//   firstParagraph: `It all started when I was 12 and I watched this anime called Naruto. I had only watched a handful of anime before it but I knew that there
-//   then I found the greatest anime of all time `,
-
-//   secondParagraph: `From that point forward I refused to listen to anyone else's opinion and refused to watch other anime. `,
-
-//   thirdParagraph: `In conclusion that is why you are wrong and I am right even though you probably werent event talking about Naruto. Thank yOu`
-// }
