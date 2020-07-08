@@ -85,7 +85,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+{
+  title: 'Why Naruto Is The Greatest Anime Of All Time And Every One Else Is Wrong',
+  date: 'RIGHT NOW',
+  firstParagraph: `It all started when I was 12 and I watched this anime called Naruto. I had only watched a handful of anime before it but I knew that there
+  then I found the greatest anime of all time `,
+
+  secondParagraph: `From that point forward I refused to listen to anyone else's opinion and refused to watch other anime. `,
+
+  thirdParagraph: `In conclusion that is why you are wrong and I am right even though you probably werent event talking about Naruto. Thank yOu`
+}
 ];
 
 /* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
@@ -111,3 +121,63 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
+
+function articleMaker(obj){
+
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleContentDate = document.createElement('p');
+  const articleContentOne = document.createElement('p');
+  const articleContentTwo = document.createElement('p');
+  const articleContentThree = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleContentDate);
+  article.appendChild(articleContentOne);
+  article.appendChild(articleContentTwo);
+  article.appendChild(articleContentThree);
+  article.appendChild(expandButton);
+
+  article.className  =  'article';
+  articleContentDate.className = 'date';
+  expandButton.className = 'expandButton';
+
+  articleTitle.textContent = obj.title;
+  articleContentDate.te =  obj.date;
+  articleContentOne.textContent = obj.firstParagraph;
+  articleContentTwo.textContent = obj.secondParagraph;
+  articleContentThree.textContent = obj.thirdParagraph;
+  expandButton.innerHTML = '+'
+  
+  expandButton.addEventListener('click', () =>{
+    article.classList.toggle('article-open');
+  })
+
+
+  return article;
+}
+
+const articles = document.querySelector('.articles')
+data.forEach(obj => {
+  const generatedArticle = articleMaker(obj);
+  articles.appendChild(generatedArticle);
+})
+// const articles = document.querySelector('.articles')
+// const generatedArticle = articleMaker(data[0]);
+// articles.appendChild(generatedArticle);
+// console.log(articleMaker(data[0]));
+
+
+
+// {
+//   title: 'Why Naruto Is The Greatest Anime Of All Time And Every One Else Is Wrong',
+//   date: 'RIGHT NOW',
+//   firstParagraph: `It all started when I was 12 and I watched this anime called Naruto. I had only watched a handful of anime before it but I knew that there
+//   then I found the greatest anime of all time `,
+
+//   secondParagraph: `From that point forward I refused to listen to anyone else's opinion and refused to watch other anime. `,
+
+//   thirdParagraph: `In conclusion that is why you are wrong and I am right even though you probably werent event talking about Naruto. Thank yOu`
+// }
